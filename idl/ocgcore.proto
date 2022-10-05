@@ -5,6 +5,8 @@ option go_package = "DarkNeos/ygopropb";
 
 // todo: comment
 
+// reference: https://github.com/mycard/srvpro/blob/master/data/structs.json
+
 message YgoCtosMsg {
   oneof msg {
     CtosPlayerInfo ctos_player_info = 1;
