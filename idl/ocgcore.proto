@@ -8,6 +8,7 @@ message YgoCtosMsg {
     CtosPlayerInfo ctos_player_info = 1;
     CtosJoinGame ctos_join_game = 2;
     CtosUpdateDeck ctos_update_deck = 3;
+    CtosHsReady ctos_hs_ready = 4;
   }  
 }
 
@@ -38,6 +39,9 @@ message CtosUpdateDeck {
   repeated int32 side = 3;
 }
 
+message CtosHsReady {
+  // empty message
+}
 // ----- STOC -----
 
 message StocJoinGame {
