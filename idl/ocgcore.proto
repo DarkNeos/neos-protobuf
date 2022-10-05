@@ -77,5 +77,16 @@ message StocTypeChange {
 }
 
 message StocHsPlayerChange {
-  int32 status = 1;
+  enum State {
+    UNKNOWN = 0;
+    MOVE = 1;
+    READY = 2;
+    NO_READY = 3;
+    LEAVE = 4;
+    TO_OBSERVER = 5;
+  }
+
+  State state = 1;
+  int32 pos = 2;
+  int32 moved_pos = 3;
 }
