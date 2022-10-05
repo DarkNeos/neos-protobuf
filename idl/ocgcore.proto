@@ -23,6 +23,7 @@ message YgoStocMsg {
     StocHsPlayerEnter stoc_hs_player_enter = 3;
     StocTypeChange stoc_type_change = 4;
     StocHsPlayerChange stoc_hs_player_change = 5;
+    StocHsWatchChange stoc_hs_watch_change = 6;
   }
 }
 
@@ -89,4 +90,8 @@ message StocHsPlayerChange {
   State state = 1;
   int32 pos = 2;
   int32 moved_pos = 3;
+}
+
+message StocHsWatchChange {
+  int32 count = 1;
 }
