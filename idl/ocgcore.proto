@@ -13,6 +13,7 @@ message YgoCtosMsg {
     CtosJoinGame ctos_join_game = 2;
     CtosUpdateDeck ctos_update_deck = 3;
     CtosHsReady ctos_hs_ready = 4;
+    CtosHsStart ctos_hs_start = 5;
   }  
 }
 
@@ -46,6 +47,10 @@ message CtosUpdateDeck {
 }
 
 message CtosHsReady {
+  // empty message
+}
+
+message CtosHsStart {
   // empty message
 }
 // ----- STOC -----
