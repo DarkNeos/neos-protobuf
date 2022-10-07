@@ -14,6 +14,7 @@ message YgoCtosMsg {
     CtosUpdateDeck ctos_update_deck = 3;
     CtosHsReady ctos_hs_ready = 4;
     CtosHsStart ctos_hs_start = 5;
+    CtosHsNotReady ctos_hs_not_ready = 6;
   }  
 }
 
@@ -47,6 +48,10 @@ message CtosUpdateDeck {
 }
 
 message CtosHsReady {
+  // empty message
+}
+
+message CtosHsNotReady {
   // empty message
 }
 
