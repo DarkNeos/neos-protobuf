@@ -79,7 +79,19 @@ message StocHsPlayerEnter {
 }
 
 message StocTypeChange {
-  int32 type = 1;
+  enum SelfType {
+    UNKNOWN = 0;
+    PLAYER1 = 1;
+    PLAYER2 = 2;
+    PLAYER3 = 3;
+    PLAYER4 = 4;
+    PLAYER5 = 5;
+    PLAYER6 = 6;
+    OBSERVER = 100;
+  }
+
+  SelfType self_type = 1;
+  bool is_host = 2;
 }
 
 message StocHsPlayerChange {
