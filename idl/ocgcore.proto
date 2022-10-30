@@ -26,6 +26,7 @@ message YgoStocMsg {
     StocTypeChange stoc_type_change = 4;
     StocHsPlayerChange stoc_hs_player_change = 5;
     StocHsWatchChange stoc_hs_watch_change = 6;
+    StocSelectHand stoc_select_hand = 7;
   }
 }
 
@@ -116,4 +117,8 @@ message StocHsPlayerChange {
 
 message StocHsWatchChange {
   int32 count = 1;
+}
+
+message StocSelectHand {
+  // empty message
 }
