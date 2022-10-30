@@ -15,6 +15,7 @@ message YgoCtosMsg {
     CtosHsReady ctos_hs_ready = 4;
     CtosHsStart ctos_hs_start = 5;
     CtosHsNotReady ctos_hs_not_ready = 6;
+    CtosHandResult ctos_hand_result = 7;
   }  
 }
 
@@ -59,6 +60,18 @@ message CtosHsNotReady {
 message CtosHsStart {
   // empty message
 }
+
+message CtosHandResult {
+  enum HandType {
+    UNKNOWN = 0;
+    SCISSORS = 1;
+    ROCK = 2;
+    PAPER = 3;
+  }
+
+  HandType hand = 1;
+}
+
 // ----- STOC -----
 
 message StocJoinGame {
