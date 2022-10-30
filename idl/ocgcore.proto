@@ -16,7 +16,8 @@ message YgoCtosMsg {
     CtosHsStart ctos_hs_start = 5;
     CtosHsNotReady ctos_hs_not_ready = 6;
     CtosHandResult ctos_hand_result = 7;
-  }  
+    CtosTpResult ctos_tp_result = 8;
+  }
 }
 
 message YgoStocMsg {
@@ -28,14 +29,14 @@ message YgoStocMsg {
     StocHsPlayerChange stoc_hs_player_change = 5;
     StocHsWatchChange stoc_hs_watch_change = 6;
     StocSelectHand stoc_select_hand = 7;
+    StocHandResult stoc_hand_result = 8;
+    StocSelectTp stoc_select_tp = 9;
   }
 }
 
 // ----- CTOS -----
 
-message CtosPlayerInfo {
-  string name = 1;
-}
+message CtosPlayerInfo { string name = 1; }
 
 message CtosJoinGame {
   int32 version = 1;
@@ -49,27 +50,22 @@ message CtosUpdateDeck {
   repeated int32 side = 3;
 }
 
-message CtosHsReady {
-  // empty message
-}
+message CtosHsReady {}
 
-message CtosHsNotReady {
-  // empty message
-}
+message CtosHsNotReady {}
 
-message CtosHsStart {
-  // empty message
-}
+message CtosHsStart {}
 
-message CtosHandResult {
-  enum HandType {
+message CtosHandResult { HandType hand = 1; }
+
+message CtosTpResult {
+  enum TpType {
     UNKNOWN = 0;
-    SCISSORS = 1;
-    ROCK = 2;
-    PAPER = 3;
+    FIRST = 1;
+    SECOND = 2;
   }
 
-  HandType hand = 1;
+  TpType tp = 1;
 }
 
 // ----- STOC -----
@@ -128,10 +124,21 @@ message StocHsPlayerChange {
   int32 moved_pos = 3;
 }
 
-message StocHsWatchChange {
-  int32 count = 1;
+message StocHsWatchChange { int32 count = 1; }
+
+message StocSelectHand {}
+
+message StocHandResult {
+  HandType meResult = 1;
+  HandType opResult = 2;
 }
 
-message StocSelectHand {
-  // empty message
+message StocSelectTp {}
+// ----- common structs ------
+
+enum HandType {
+  UNKNOWN = 0;
+  SCISSORS = 1;
+  ROCK = 2;
+  PAPER = 3;
 }
